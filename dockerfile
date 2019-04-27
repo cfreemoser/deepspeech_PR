@@ -144,12 +144,11 @@ ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/loc
 # << END Configure Bazel
 
 
-
-
 # Copy DeepSpeech repo contents to container's /DeepSpeech
 # COPY . /DeepSpeech/
 # Alternative clone from GitHub 
-RUN echo 'no cache' && git clone https://github.com/mozilla/DeepSpeech.git
+WORKDIR /
+RUN git clone https://github.com/mozilla/DeepSpeech.git
 
 WORKDIR /DeepSpeech
 
