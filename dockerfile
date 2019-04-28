@@ -137,12 +137,12 @@ ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/loc
 
 
 # Copy DeepSpeech repo contents to container's /DeepSpeech
-COPY . /DeepSpeech/
+# COPY . /DeepSpeech/
 
 # Alternative clone from GitHub 
-# RUN apt-get update && apt-get install -y git-lfs 
-# WORKDIR /
-# RUN git clone https://github.com/mozilla/DeepSpeech.git
+RUN apt-get update && apt-get install -y git-lfs 
+WORKDIR /
+RUN git clone https://github.com/mozilla/DeepSpeech.git
 
 WORKDIR /DeepSpeech
 
